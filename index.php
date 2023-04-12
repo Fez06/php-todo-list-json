@@ -13,9 +13,18 @@
 
 
 </head>
+
+<?php 
+
+?>
 <body>
     <div id="app">
         <h1>To Do List</h1>
+        <ul>
+            <li v-for="todo in todolist">
+                <h3>{{todo.text}}</h3>
+            </li>
+        </ul>
     </div>
     <script src="main.js"></script>
 </body>
