@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,12 +15,21 @@
 
 </head>
 
-<?php 
+<?php
 
 ?>
+
 <body>
     <div id="app">
         <h1>To Do List</h1>
+
+        <form @submit.prevent="addTodo">
+            
+            <input type="text" id="newTodo" v-model="newTodo" placeholder="Aggiungi Todo!">
+            
+            <button type="submit">Submit</button>
+        </form>
+
         <ul>
             <li v-for="todo in todolist">
                 <h3>{{todo.text}}</h3>
@@ -28,4 +38,5 @@
     </div>
     <script src="main.js"></script>
 </body>
+
 </html>

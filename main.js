@@ -3,7 +3,8 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            todolist: []
+            todolist: [],
+            newTodo: ''
         }
     },
     created() {
@@ -30,11 +31,26 @@ createApp({
 
         axios.get('main.php', {
             params: {
-                
+                //se scrivo qui' dei param dell'array vengono passati
             }
         })
             .then((response) => {
                 this.todolist = response.data;
             })
+    },
+    methods: {
+        addTodo() {
+            console.log('new one')
+            const data = {
+                newTodo: this.newTodo
+            };
+
+            axios.post('main.php', data, {
+                headers: {'content-Type': 'multipart/form-data'}
+            }).then((response) => {
+                this.todolist = response.data;
+                console.log('ok')
+            });
+        }
     }
 }).mount('#app');
