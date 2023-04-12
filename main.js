@@ -18,6 +18,16 @@ createApp({
         //         console.log(this.todolist)
         //     })
 
+        /*NDR: io all'inizio pensavo si potesse fare anche solo con
+        axios.get('server.php')
+            .then(response => {
+                this.todos = response.data;
+            }); 
+            ma evidentemente non si puo' o vue dell'inspector era rotto,
+            da chiedere!!
+        */
+
+
         axios.get('main.php', {
             params: {
                 
